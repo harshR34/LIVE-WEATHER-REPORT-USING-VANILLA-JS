@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Circular Spotify Text', sans-serif;
+    background: linear-gradient(to right bottom, #443e89, #0f0c29);
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .container {
+    text-align: center;
+  }
+  h1 {
+    font-size: 3em; /* Bigger size font */
+    margin-bottom: 50px;
+  }
+  /*button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #1DB954; Spotify's green 
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background-color: #1ed760; /* Lighter shade of green on hover 
+  }*/
+  .btn {
+    width: 370px;
+    height: 40px;
+    font-size: 1.1em;
+    cursor: pointer;
+    background: linear-gradient(to right bottom, #443e89, #0f0c29);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: all .4s;
+   }
+   
+   .btn:hover {
+    border-radius: 5px;
+    transform: translateY(-10px);
+    box-shadow: 0 7px 0 -2px #f85959,
+     0 15px 0 -4px #39a2db,
+     0 16px 10px -3px #39a2db;
+   }
+   
+   .btn:active {
+    transition: all 0.2s;
+    transform: translateY(-5px);
+    box-shadow: 0 2px 0 -2px #f85959,
+     0 8px 0 -4px #39a2db,
+     0 12px 10px -3px #39a2db;
+    }
+   .btn svg {
+    height: 30px;
+    }
+
+    .btn span{
+        display:flex;
+        font-weight: bold;
+        letter-spacing: 1px;
+        gap:25px;
+        margin: 3px;
+    }
+    
+    .btn p{
+        margin:7px;
+    }
+
+</style>
+</head>
+<body>
+<div class="container">
+  <img src="/assets/images/WEATHER-ICON.png" alt="" width="350" height="100"> 
+  <h1>Thank You for Share Your Experience</h1>
+  <!-- <button onclick="window.location.href='index.html'">Continue</button> Replace 'your_redirect_page_url' with the URL you want to redirect to -->
+  <button class="btn" onclick="window.location.href='index.html';window.location.target='_self';" > 
+    <span><img src="/assets/images/weather.svg" width="27" alt=""><p> Continue with WeatherReport</p></span>
+  </button>
+</div>
+</body>
+</html>

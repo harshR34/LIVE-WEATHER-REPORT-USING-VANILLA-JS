@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback form</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to right bottom, #443e89, #0f0c29);
+    }
+    
+    .rating-card-container {
+        position: relative;
+    }
+
+    .rating-card {
+        width: 90%;
+        max-width: 500px;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        background: #0f0c29;
+        background: linear-gradient(to right bottom, #443e89, #0f0c29);
+        padding: 20px;
+        border-radius: 16px;
+        font-family: Arial, Helvetica, sans-serif;
+        box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.058);
+    }
+    
+    .text-wrapper {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    }
+    
+    .text-primary {
+        color: white;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+    }
+    
+    .text-secondary {
+        color: #cccccc;
+        font-weight: 400;
+        letter-spacing: 0.5px;
+    }
+    
+    .rating-stars-container {
+        width: 100%;
+        height: 30px;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 22.5px;
+    }
+    
+    .star-label svg {
+        fill: rgb(210, 210, 210);
+        width: 20px;
+        height: auto;
+    }
+    
+    .rating-stars-container input {
+        appearance: unset;
+    }
+    .rating-stars-container input:hover~.star-label svg {
+        fill: rgb(255, 204, 185);
+    }
+    
+    .rating-stars-container input:checked~.star-label svg {
+        fill: rgb(255, 102, 47);
+        animation: slide-in-fwd-center 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    }
+    
+    @keyframes slide-in-fwd-center {
+        0% {
+            transform: scale(1.6);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+    
+    .socials-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        padding-top: 20px;
+        border-top: 1px solid rgb(150, 150, 150);
+    }
+    
+    .social-button {
+        text-decoration: none;
+    }
+    
+    .social-button svg {
+        width: 35px;
+        fill: rgb(228, 228, 228);
+    }
+    
+    .social-button:hover svg {
+        fill: rgb(255, 102, 47);
+    }
+    .button {
+      width: 90px;
+      height: 40px;
+      position: relative;
+      font-family: var(--font);
+      color: #3b82f6;
+      font-weight: 600;
+      margin-bottom: 10px;
+      background-color: #fff;
+      border: none;
+      overflow: hidden;
+      border-radius: 5px;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+      transition: all ease 100ms;
+    }
+    
+    button:hover {
+      background-color: #cbdcf8;
+    }
+    
+    button:focus {
+      background-color: #cbdcf8;
+    }
+    
+    button::before {
+      content: 'done✅';
+      position: absolute;
+      color: #3b82f6;
+      left: 0;
+      top: -14px;
+      right: 0;
+      transition: all ease 300ms;
+      opacity: 0%;
+    }
+    
+    button:focus::before {
+      opacity: 100%;
+      transform: translatey(26px);
+    }
+    
+    .submit {
+      transition: all ease 100ms;
+      opacity: 100%;
+    }
+    
+    button:focus > .submit {
+      opacity: 0%;
+    } 
+    </style>
+</head>
+<body>
+  <div class="rating-card">
+    <img src="/assets/images/WEATHER-ICON.png" width="200" alt="">
+    <div class="text-wrapper">
+      <h1 class="text-primary">Please Rate Your Experience</h1>
+      <h4 class="text-secondary">to help us serve you better</h4>
+    </div>
+  
+    <div class="rating-stars-container">
+      <input value="star-5" name="star" id="star-5" type="radio" />
+      <label for="star-5" class="star-label">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+            pathLength="360"
+          ></path>
+        </svg>
+      </label>
+      <input value="star-4" name="star" id="star-4" type="radio" />
+      <label for="star-4" class="star-label">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+            pathLength="360"
+          ></path>
+        </svg>
+      </label>
+      <input value="star-3" name="star" id="star-3" type="radio" />
+      <label for="star-3" class="star-label">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+            pathLength="360"
+          ></path>
+        </svg>
+      </label>
+      <input value="star-2" name="star" id="star-2" type="radio" />
+      <label for="star-2" class="star-label">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+            pathLength="360"
+          ></path>
+        </svg>
+      </label>
+      <input value="star-1" name="star" id="star-1" type="radio" />
+      <label for="star-1" class="star-label">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+            pathLength="360"
+          ></path>
+        </svg>
+      </label>
+    </div>
+    <button class="button" type="submit" onclick="window.location.href='thanks.html'">
+      <p class="submit">submit</p>
+    </button>
+    <div class="socials-container">
+      <a class="social-button" href="https://www.linkedin.com/in/harsh-vaghela-82a801279">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#fff"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg>
+      </a>
+      <a class="social-button" href="https://www.instagram.com/be.theharsh?igsh=MW56NGJsa2Q1b2Rybg==">
+        <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+          ></path>
+        </svg>
+      </a>
+      <a class="social-button" href="https://github.com/harshR34" >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
